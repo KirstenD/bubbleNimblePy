@@ -13,7 +13,8 @@ def drawBubble( radius , xpoint , ypoint , zpoint , name,time ):
     y = (0, 1, 0)
 
     c = cmds.polySphere( r=radius , ax = y , cuv = 2 , ch = 1 , n = name )[0]
-   # cmds.setAttr( "lambert1.transparency" ,0.470085 0.470085 0.470085,)
+    cmds.setAttr( "lambert1.transparency" ,0.470085, 0.470085, 0.470085,type="double3")
+    cmds.setAttr( "lambert1.color" ,0.01, 0.1, 0.470085,type="double3")
     rate = float(random.randrange(1,8))/16
     print rate
 
@@ -110,7 +111,9 @@ class ManyBubblesWidget(PyGlassWidget):
         time =120
         d = cmds.polyCylinder( r=15, h=20, sx=40, sy=10, sz=1, ax=(0,0,0), rcp=0, cuv=2, ch=1, n='CylinderContainer')[0]
         cmds.move(0,10,0)
+
         cmds.select(d)
+
         response = nimble.createRemoteResponse(globals())
         response.put('name', d)
         num =self.NumBubbles.value()
