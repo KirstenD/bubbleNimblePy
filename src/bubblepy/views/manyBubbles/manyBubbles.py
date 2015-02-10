@@ -38,10 +38,10 @@ def drawBubble( radius , xpoint , ypoint , zpoint , name,time ):
         response = nimble.createRemoteResponse(globals())
         response.put('name', name)
 
-        if (xpoint -radius*2<-13):
+        if (xpoint -rate<-13):
             xpoint +=rate
             positive = True
-        elif (xpoint + radius*2>13):
+        elif (xpoint + rate>13):
             xpoint -=rate
             positive = False
         else:
@@ -50,10 +50,10 @@ def drawBubble( radius , xpoint , ypoint , zpoint , name,time ):
                 xpoint +=rate
             else:
                 xpoint -=rate
-        if (zpoint - radius_long*2<-13):
+        if (zpoint -rate<-13):
             zpoint +=rate
             positivez = True
-        elif (zpoint +radius_long*2>13):
+        elif (zpoint +rate>13):
             zpoint -=rate
             positivez = False
         else:
@@ -63,8 +63,8 @@ def drawBubble( radius , xpoint , ypoint , zpoint , name,time ):
             else:
                 zpoint -=rate
 
-        if ypoint >=19.9:
-            ypoint = 20
+        if ypoint >20-radius:
+            #ypoint = 20
 
             print ("pop")
             break
@@ -121,7 +121,7 @@ class ManyBubblesWidget(PyGlassWidget):
         for i in range(num):
 
             randomX = random.randrange(-10,10)
-            randomY = random.randrange(0,2)
+            randomY = random.randrange(1,2)
             randomZ = random.randrange(-10, 10)
             circleShape( randomX , randomY , randomZ ,bubble  , 1 , None, time )
             bubble = "bubble" + str(i)
