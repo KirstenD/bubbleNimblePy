@@ -46,8 +46,8 @@ class bubblePyHomeWidget(PyGlassWidget):
 
 #___________________________________________________________________________________________________ _handleOneBubble
     def _handleOneBubble(self):
-        self.mainWindow.setActiveWidget('OneBubble')
+        self.mainWindow.setActiveWidget('oneBubble')
 
 #___________________________________________________________________________________________________ _handlemanyBubbles
     def _handleManyBubbles(self):
-        self.mainWindow.setActiveWidget('ManyBubbles')
+        self.mainWindow.setActiveWidget('manyBubbles')

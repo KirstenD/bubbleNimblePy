@@ -25,6 +25,20 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="exampleBtn">
+        <property name="text">
+         <string>Make Many bubbles</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="NumBubbles">
+        <property name="value">
+         <number>10</number>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="homeBtn">
         <property name="text">
          <string>Return Home</string>
